@@ -18,6 +18,8 @@
             <span class="icon-bar"></span>
           </button>
         <a class="navbar-brand" href="<%= root_url %>"/>Home</a>
+        <a class="navbar-brand" href="<%= signin_url %>"/>Sign In</a>
+        <a class="navbar-brand" href="<%= signup_url %>"/>Sign Up</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
@@ -32,4 +34,8 @@
       <%= yield %>
     </div>
   </body>
+  <%= link_to("See attractions", attractions_path) %>
+  <%if current_user%>
+    <%= link_to("Log Out", signout_path) %>
+  <%end%>
 </html>
